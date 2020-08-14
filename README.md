@@ -20,19 +20,17 @@ $ pip3 install pandas
 python webcrawler.py
 python sendemail.py
 ```
+
+
+### Input email and password
+Be sure to change the csv file location.
+
 ![](https://i.imgur.com/4m0y5Eu.png)
 
-### Set email and password
-```
-sender = 'text email account'
-gmail_password = 'password'
-recipients = ['email here']
-```
-Be sure to change the csv file location.
 
 ### License
 MIT
 
 ### TODO:
-  1. Change xpath
-~~2. Ask users Email and password from terminal~~ 
+1. Change xpath
+2. ~~Ask users Email and password from terminal~~ 
