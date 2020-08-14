@@ -7,17 +7,18 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
-COMMASPACE = ', '.join
+COMMASPACE = ', '
 
 def main():
     sender = input("Please enter your email here:")
     gmail_password = getpass.getpass("Please enter your password here:")
     recipients = input("Who would you want to send to ?:")
-    
+    recipients_list = []
+    recipients_list.append(recipients)
     # 建立郵件主題
     outer = MIMEMultipart()
     outer['Subject'] = '日本東京都內最新疫情'
-    outer['To'] = COMMASPACE(recipients)
+    outer['To'] = COMMASPACE.join(recipients_list)
     outer['From'] = sender
     outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
 
@@ -36,7 +37,6 @@ def main():
             outer.attach(msg)
         except:
             print("Unable to open one of the attachments. Error: ", sys.exc_info()[0])
-            raise
 
     composed = outer.as_string()
 
@@ -47,7 +47,7 @@ def main():
             s.starttls()
             s.ehlo()
             s.login(sender, gmail_password)
-            s.sendmail(sender, recipients, composed)
+            s.sendmail(sender, recipients_list, composed)
             s.close()
         print("Email sent!")
     except:
