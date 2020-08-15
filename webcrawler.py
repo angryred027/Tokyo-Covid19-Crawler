@@ -19,9 +19,7 @@ total_people = selector.xpath('//*[@id="tab-0"]/div/div/div[1]/div/div/div[4]/ul
 everyday_number = selector.xpath('//*[@id="tab-0"]/div/div/div[2]/div/div/div[1]/div/div/span/text()')
 date_and_daynumber = selector.xpath('//*[@id="tab-0"]/div/div/div[2]/div/div/div[1]/div/div/small/text()')
 
-with open('/Users/bomin/Desktop/covid19.csv', newline='') as f:
-    reader = csv.reader(f)
-    coronalist = list(reader)
+coronalist = []
 coronalist.append([total_people,everyday_number,date_and_daynumber])
 
 driver.close()
@@ -29,5 +27,5 @@ print ('done!')
 
 co = pd.DataFrame(coronalist)
 #co.columns = ['Total number','Daily infection','Date(increase or decrease)']
-co.to_csv('/Users/bomin/Desktop/covid19.csv',index = False,encoding='utf_8_sig')
+co.to_csv('/Users/bomin/Documents/tokyocovid19crawler/covid19.csv',index = False,encoding='utf_8_sig')
 coronalist
