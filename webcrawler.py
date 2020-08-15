@@ -26,6 +26,6 @@ driver.close()
 print ('done!')
 
 co = pd.DataFrame(coronalist)
-#co.columns = ['Total number','Daily infection','Date(increase or decrease)']
+co.columns = ['Total number','Daily infection','Date(increase or decrease)']
 co.to_csv('/Users/bomin/Documents/tokyocovid19crawler/covid19.csv',index = False,encoding='utf_8_sig')
 coronalist

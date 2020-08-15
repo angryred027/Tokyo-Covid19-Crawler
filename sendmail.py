@@ -23,7 +23,7 @@ def main():
     outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
 
     # 檔案位置
-    attachments = ['/Users/bomin/Desktop/covid19.csv']
+    attachments = ['/Users/bomin/Documents/tokyocovid19crawler/covid19.csv']
 
     # 加入檔案到MAIL底下
     for file in attachments:
