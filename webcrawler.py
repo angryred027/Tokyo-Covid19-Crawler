@@ -16,7 +16,7 @@ time.sleep(10)
 selector = etree.HTML(driver.page_source)
 
 total_people = selector.xpath('//*[@id="tab-0"]/div/div/div[1]/div/div/div[4]/ul/li/div/span[2]/strong/text()')
-everyday_number = selector.xpath('//*[@id="tab-0"]/div/div/div[2]/div/div/div[1]/div/div/span/text()')
+everyday_number = selector.xpath('normalize-space(//*[@id="tab-0"]/div/div/div[4]/div/div/div[1]/div/div/div/span/text())')
 date_and_daynumber = selector.xpath('//*[@id="tab-0"]/div/div/div[2]/div/div/div[1]/div/div/small/text()')
 
 coronalist = []
