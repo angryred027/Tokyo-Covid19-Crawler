@@ -27,6 +27,8 @@ Be sure to change the csv file location.
 
 ![](https://i.imgur.com/4m0y5Eu.png)
 
+### Result
+![](https://img.onl/GqjNDt)
 
 ### License
 MIT
